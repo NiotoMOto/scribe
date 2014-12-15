@@ -20,7 +20,8 @@ define([
 
       var realChangedNodes = allChangedNodes.
         filter(function(n) { return ! nodeHelpers.isEmptyTextNode(n); }).
-        filter(function(n) { return ! elementHelpers.isSelectionMarkerNode(n); });
+        filter(function(n) { return ! elementHelpers.isSelectionMarkerNode(n); }).
+        filter(function(n) { return ! n.nodeType === 'IFRAME'; });
 
       return realChangedNodes.length > 0;
     }
